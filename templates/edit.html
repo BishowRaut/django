@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 2;
+            padding: 13px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 13px;
+            background-color: #ef4444;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Edit Student Details</h2>
+    
+    <!-- Empty action sends the updated details back to the correct dynamic view -->
+    <form method="POST" action="">
+        <!-- Security token required by Django -->
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" value="{{ student.name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" value="{{ student.age }}" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" value="{{ student.email }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Home Address</label>
+            <input type="text" id="address" name="address" value="{{ student.address }}" required>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit">Update Student</button>
+            <a href="{% url 'home' %}" class="btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
