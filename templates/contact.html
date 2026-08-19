@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bishow Raut</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        /* Navbar */
+
+        nav {
+            background: #222;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav h2 span {
+            color: #4CAF50;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Contact Section */
+
+        .contact {
+            min-height: 75vh;
+            padding: 60px 8%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 1000px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Left Side */
+
+        .contact-info {
+            background: #222;
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .contact-info h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h1 span {
+            color: #4CAF50;
+        }
+
+        .contact-info p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 18px;
+        }
+
+        .contact-item strong {
+            color: #4CAF50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #4CAF50;
+        }
+
+        /* Social Links */
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links h3 {
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            padding: 10px 15px;
+
+            background: #333;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #4CAF50;
+        }
+
+        /* Form */
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #ddd;
+            border-radius: 7px;
+
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4CAF50;
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 13px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #4CAF50;
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #388E3C;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 750px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <h2>
+            Bishow <span>Raut</span>
+        </h2>
+
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Contact Section -->
+
+    <section class="contact">
+
+        <div class="contact-container">
+
+
+            <!-- Contact Information -->
+
+            <div class="contact-info">
+
+                <h1>
+                    Let's <span>Connect</span>
+                </h1>
+
+                <p>
+                    If you want to discuss a project, collaboration,
+                    or just want to say hello, feel free to contact me.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <strong>Email</strong>
+
+                    <a href="mailto:bishowraut15@gmail.com">
+                        bishowraut15@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Location</strong>
+
+                    <span>Nepal</span>
+
+                </div>
+
+
+                <!-- Social Links -->
+
+                <div class="social-links">
+
+                    <h3>Find Me Online</h3>
+
+                    <a href="https://github.com/BishowRaut"
+                       target="_blank">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/bishowraut/"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+
+                    <a href="https://bishowraut.com.np"
+                       target="_blank">
+                        Website
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="contact-form">
+
+                <h2>
+                    Send Me a Message
+                </h2>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Enter subject"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Bishow Raut. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
